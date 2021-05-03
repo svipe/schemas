@@ -183,6 +183,7 @@ At the moment we only support signing of PDFs or statements expressed as a plain
 |---|---|---|
 | sign|JSON| Either a statement or URL to PDF. |
 
+
 ```
 {
   ..
@@ -204,6 +205,7 @@ The response has the same JSON format but signed by the peer, so signature is di
 
 The current implementation at acme.svipe.io is using:
 
+```
 {
   ..
   "claims": {
