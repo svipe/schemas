@@ -89,4 +89,7 @@ Each certificate will be according to some schema such as FHIR, EU Vaccination c
 ```
 
 
+## Authentication Method
+
+acr
 
