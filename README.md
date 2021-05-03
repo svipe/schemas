@@ -7,11 +7,11 @@ Just like in OIDC we are using this syntax to mark claim requests as mandatory o
 ```
   {
   ..
-"claims": {
-  ..
-  "svipeid": {"essential":true}, 
-  "given_name":null
-  ..
+  "claims": {
+    ..
+    "svipeid": {"essential":true}, 
+    "given_name":null
+    ..
   }
   ..
 }
