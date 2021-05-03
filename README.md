@@ -72,15 +72,15 @@ At the moment we support signing of PDFs or statements expressed as a plain stri
 
 ## Certification
 
-This is really a two step process since you need to be authenticated first in order to share your public key with the issuer. When picking up a certificate a response is not really needed but maybe we want to tell the issuer that the certificate was accepted? Also, should we call this something other than Claim? How about Certificate?
+This is really a two step process since you need to be authenticated first in order to share your public key with the issuer. When picking up a certificate a response is not really needed but maybe we want to tell the issuer that the certificate was accepted? Also, should we call this something other than Claim? How about Certificate? Or should it be a claim?
 
-Each certificate will be according to some schema such as FHIR, EU Vaccination certificate etc.
+Each certificate will be according to some schema such as FHIR, EU Vaccination certificate etc. Do we need an envelope with some meta data? Should it be X509 or JWS or either?
 
 ```
 {
 "schema": URL,
 "sub": string, // This should match the svipeid sub
-"payload": string, // A JWS to be defined
+"bytes": string, // A base64 encoded X509 certificate
 }
 ```
 
