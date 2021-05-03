@@ -76,8 +76,11 @@ This is really a two step process since you need to be authenticated first in or
 
 Each certificate will be according to some schema such as FHIR, EU Vaccination certificate etc.
 
+```
 {
 "schema": URL,
 "sub": string, // This should match the svipeid sub
 "payload": string, // A JWS to be defined
 }
+```
+
