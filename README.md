@@ -1,4 +1,4 @@
-# schemas
+# Authentication/Disclosure
 
 Essentially we support standard OIDC claims, add some from mDL and have custom claims for signing, certificate pickup and multi factor authentication.
 
@@ -30,7 +30,9 @@ These are according to the standard as documented here https://openid.net/specs/
 | address| JSON| End-User's preferred postal address. The value of the address member is a JSON [RFC4627] structure containing some or all of the members defined in Section 5.1.1.|
 | updated_at| number| Time the End-User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time.|
 
-From the standard for Mobile Drivers License https://www.iso.org/standard/69084.html and ICAO xx we add these:
+## Custom Claims
+
+From the standard for Mobile Drivers License https://www.iso.org/standard/69084.html and ICAO xx we add these. Dates, images and all the rest are formatted as for OIDC.
 
 | Claim | Type | Description
 | --- | --- | --- |
@@ -58,3 +60,24 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | age_in_years| number | |
 | age_over_18| boolean | |
 | age_over_21| boolean | |
+
+## Singature Requests
+
+At the moment we support signing of PDFs or statements expressed as a plain string.
+
+
+| Claim | Type | Description |
+|---|---|---|
+| sign|string| Either a statement or URL to PDF. |
+
+## Certification
+
+This is really a two step process since you need to be authenticated first in order to share your public key with the issuer. When picking up a certificate a response is not really needed but maybe we want to tell the issuer that the certificate was accepted? Also, should we call this something other than Claim? How about Certificate?
+
+Each certificate will be according to some schema such as FHIR, EU Vaccination certificate etc.
+
+{
+"schema": URL,
+"sub": string, // This should match the svipeid sub
+"payload": string, // A JWS to be defined
+}
