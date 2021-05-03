@@ -29,3 +29,9 @@ These are according to the standard as documented here https://openid.net/specs/
 | phone_number_verified| boolean|True if the End-User's phone number has been verified; otherwise false. When this Claim Value is true, this means that the OP took affirmative steps to ensure that this phone number was controlled by the End-User at the time the verification was performed. The means by which a phone number is verified is context-specific, and dependent upon the trust framework or contractual agreements within which the parties are operating. When true, the phone_number Claim MUST be in E.164 format and any extensions MUST be represented in RFC 3966 format. |
 | address| JSON| End-User's preferred postal address. The value of the address member is a JSON [RFC4627] structure containing some or all of the members defined in Section 5.1.1.|
 | updated_at| number| Time the End-User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time.|
+
+From the standard for Mobile Drivers License https://www.iso.org/standard/69084.html we add these:
+
+| Claim | Type | Description
+| --- | --- | --- |
+| x | string| y |
