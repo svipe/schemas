@@ -41,20 +41,20 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | resident_address | string| |
 | resident_city | string| Currently ABSENT|
 | resident_state | string| Currently ABSENT|
-| resident_postal_code | string|Currently ABSENT|
-| nationality | string|End-User's nationality, represented as a BCP47 [RFC5646] language tag. This is typically an ISO 639-1 Alpha-2 [ISO639‑1] language code in lowercase and an ISO 3166-1 Alpha-2 [ISO3166‑1] country code in uppercase, separated by a dash. For example, en-US or fr-CA. As a compatibility note, some implementations have used an underscore as the separator rather than a dash, for example, en_US; Relying Parties MAY choose to accept this locale syntax as well.|
-| administrative_number | string| This could be Social Security Number or any other national identifier such as Swedish personal number|
-| person_number | string| Specifically a Swedish personal number|
-| svipeid | string| A globally unique identifier issued by Svipe. It is the same as sub above|
-| peerid | string| A unique identifier issued by Svipe to a particular Relying Party.|
-| document_type | string| P for Passport and I for Identity Card|
+| resident_postal_code | string | Currently ABSENT|
+| nationality | string | End-User's nationality, represented as a BCP47 [RFC5646] language tag. This is typically an ISO 639-1 Alpha-2 [ISO639‑1] language code in lowercase and an ISO 3166-1 Alpha-2 [ISO3166‑1] country code in uppercase, separated by a dash. For example, en-US or fr-CA. As a compatibility note, some implementations have used an underscore as the separator rather than a dash, for example, en_US; Relying Parties MAY choose to accept this locale syntax as well.|
+| administrative_number | string| This could be a SSN (Social Security Number) or any other national identifier such as Swedish personal number|
+| personal_number | string| Specifically a Swedish personal number|
+| svipeid | string | A globally unique identifier issued by Svipe. It is the same as sub above.|
+| peerid | string | A unique identifier issued by Svipe to a particular Relying Party.|
+| document_type | string| P for Passport and I for Identity Card and X for Residence Card (link to spec).|
 | document_number | string| A unique number in the underlying document|
-| issuing_authority | string| Document issuing authority|
-| issuing_country| string| Country that issued the document |
-| expiry_date| string| When the document expires.Format like birthday.|
-| issue_date| string| When the document was issued. Format like birthday.|
-| driving_privileges| string| Currently ABSENT.|
-| birth_date| string| Same as birthday.|
-| age_in_years| number| |
-| age_over_18| boolean| |
-| age_over_21| boolean| |
+| issuing_authority | string| Document issuing authority.|
+| issuing_country| string| Country that issued the document. |
+| expiry_date| string | When the document expires. Format like birthday.|
+| issue_date| string | When the document was issued. Format like birthday.|
+| driving_privileges | string| Currently ABSENT.|
+| birth_date| string | Same as birthday.|
+| age_in_years| number | |
+| age_over_18| boolean | |
+| age_over_21| boolean | |
