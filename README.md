@@ -49,10 +49,10 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | peerid | string | A unique identifier issued by Svipe to a particular Relying Party.|
 | document_type | string| P for Passport and I for Identity Card and X for Residence Card (link to spec).|
 | document_number | string| A unique number in the underlying document|
-| issuing_authority | string| Document issuing authority.|
-| issuing_country| string| Country that issued the document. |
-| expiry_date| string | When the document expires. Format like birthday.|
-| issue_date| string | When the document was issued. Format like birthday.|
+| document_issuing_authority | string| Document issuing authority.|
+| document_issuing_country| string| Country that issued the document. |
+| document_expiry_date| string | When the document expires. Format like birthday.|
+| document_issue_date| string | When the document was issued. Format like birthday.|
 | driving_privileges | string| Currently ABSENT.|
 | birth_date| string | Same as birthdate.|
 | age_in_years| number | |
