@@ -113,8 +113,28 @@ At the moment we only support signing of PDFs or statements expressed as a plain
   ..
 }
 ```
-
 The response has the same JSON format but signed by the peer.
+
+### Obsolete implementation
+
+The current implementation at acme.svipe.io is using:
+
+{
+  ..
+  "claims": {
+  ..
+  "sign": { 
+    "data": "statement or URL to PDF",
+    "hash": "hash(data)"
+    },
+  ..
+  }
+  ..
+}
+```
+
+And the response is the same.
+
 
 
 ## Certification
@@ -144,7 +164,28 @@ Putting the schema in the envelope enables us to use that as an identifier in va
 }
 ```
 
+### Obsolete implementation
 
+At the moment we do this:
+
+```
+{
+  ..
+  "claims": {
+  ..
+  "credential": { 
+    "iss": "issuer name",
+    "name": "readable name, i.e covid vaccination, Ericsson Employee",
+    "id": "some kind of serial number or opaque identifier",
+    "data": "the actual certificate in the form of a JWS"
+    },
+  ..
+  }
+  ..
+}
+```
+
+These can later be requested matching iss, name and id.
 
 
 
