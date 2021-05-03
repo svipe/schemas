@@ -2,6 +2,21 @@
 
 Essentially we support standard OIDC claims, add some from mDL and have custom claims for signing, certificate pickup and multi factor authentication.
 
+Just like in OIDC we are using this syntax to mark claim requests as mandatory or optional:
+
+```
+  {
+  ..
+"claims": {
+  ..
+  "svipeid": {"essential":true}, 
+  "given_name":null
+  ..
+  }
+  ..
+}
+```
+
 
 ## OIDC
 
@@ -91,10 +106,25 @@ Each certificate will be according to some schema such as FHIR, EU Vaccination c
 ```
 {
 "schema": URL,
-"sub": string, // This should match the svipeid sub
 "bytes": string, // A base64 encoded X509 certificate
 }
 ```
+
+Putting the schema in the envelope enables us to use that as an identifier in value based requests. 
+
+```
+  {
+  ..
+"claims": {
+  ..
+  "certificate": { "schema": "Schema-URL"},
+  ..
+  }
+  ..
+}
+```
+
+
 
 
 
