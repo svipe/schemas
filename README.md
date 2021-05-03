@@ -38,10 +38,10 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | portrait_capture_date | string| same as picture above |
 | portrait_hash | string| OBSOLETE a hash of the portrait |
 | signature | string| End users signature using the same representation as picture |
-| resident_address | string| |
-| resident_city | string| Currently ABSENT|
-| resident_state | string| Currently ABSENT|
-| resident_postal_code | string | Currently ABSENT|
+| resident_address | string| Currently ABSENT.|
+| resident_city | string| Currently ABSENT.|
+| resident_state | string| Currently ABSENT.|
+| resident_postal_code | string | Currently ABSENT.|
 | nationality | string | End-User's nationality, represented as a BCP47 [RFC5646] language tag. This is typically an ISO 639-1 Alpha-2 [ISO639‑1] language code in lowercase and an ISO 3166-1 Alpha-2 [ISO3166‑1] country code in uppercase, separated by a dash. For example, en-US or fr-CA. As a compatibility note, some implementations have used an underscore as the separator rather than a dash, for example, en_US; Relying Parties MAY choose to accept this locale syntax as well.|
 | administrative_number | string| This could be a SSN (Social Security Number) or any other national identifier such as Swedish personal number|
 | personal_number | string| Specifically a Swedish personal number|
@@ -52,7 +52,7 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | document_issuing_authority | string| Document issuing authority.|
 | document_issuing_country| string| Country that issued the document. |
 | document_expiry_date| string | When the document expires. Format like birthday.|
-| document_issue_date| string | When the document was issued. Format like birthday.|
+| document_issue_date| string | Currently ABSENT. When the document was issued. Format like birthday.|
 | driving_privileges | string| Currently ABSENT.|
 | birth_date| string | Same as birthdate.|
 | age_in_years| number | |
