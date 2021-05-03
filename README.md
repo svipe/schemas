@@ -85,8 +85,35 @@ Sometimes you want to request only claims with specific values. If the End User 
 
 In addition to disclosure requests you can also demand that the user and/or the underlying document is present or that a platform biometric or app pin was used prove presence.
 
-acr
+If acr is present we always tret it as essential/mandatory. The request is 
 
+```
+{
+  ..
+  "acr": { 
+    "values": 
+      ["face_present", "document_present", "face_and_document_present", "biometric_present", "face_and_document_and_biometric_present",
+      "face_and_biometric_present", "document_and_biometric_present"] 
+  }
+  ..
+}
+```
+
+and the response is
+
+```
+"claims": 
+  {
+    ..
+    "acr": "face_present" // a scalar
+   ..
+  }
+```
+
+If one of the factors was not present the request fails and we provide no response.
+
+
+reference: https://openid.net/specs/openid-connect-core-1_0.html#acrSemantics
 
 ## Signature Requests
 
@@ -113,7 +140,8 @@ At the moment we only support signing of PDFs or statements expressed as a plain
   ..
 }
 ```
-The response has the same JSON format but signed by the peer.
+
+The response has the same JSON format but signed by the peer, so signature is different.
 
 ### Obsolete implementation
 
@@ -134,7 +162,6 @@ The current implementation at acme.svipe.io is using:
 ```
 
 And the response is the same.
-
 
 
 ## Certification
