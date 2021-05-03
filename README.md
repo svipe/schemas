@@ -113,7 +113,7 @@ Each certificate will be according to some schema such as FHIR, EU Vaccination c
 Putting the schema in the envelope enables us to use that as an identifier in value based requests. 
 
 ```
-  {
+{
   ..
 "claims": {
   ..
