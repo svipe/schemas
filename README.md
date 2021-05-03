@@ -90,12 +90,32 @@ acr
 
 ## Signature Requests
 
-At the moment we support signing of PDFs or statements expressed as a plain string.
+The assumption is that we only deal with symmetric agreements. The RP requesting a signature would thus enter into the agreement by signing the statement or document using the same key as used for the JWS signing. 
+
+At the moment we only support signing of PDFs or statements expressed as a plain string. These requests are useful both for Relying Parties and peer to peer - possibly offline (not to self: implement UI for this).
 
 
 | Claim | Type | Description |
 |---|---|---|
-| sign|string| Either a statement or URL to PDF. |
+| sign|JSON| Either a statement or URL to PDF. |
+
+```
+{
+  ..
+  "claims": {
+  ..
+  "sign": { 
+    "payload": "statement or URL to PDF",
+    "signature": "Base64 encoded signature of hash(payload)"
+    },
+  ..
+  }
+  ..
+}
+```
+
+The response has the same JSON format but signed by the peer.
+
 
 ## Certification
 
