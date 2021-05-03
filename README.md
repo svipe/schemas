@@ -61,6 +61,10 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | age_over_18| boolean | |
 | age_over_21| boolean | |
 
+### Value Requests
+
+Sometimes you want to request only claims with specific values. If the End User is not in possession of such claims they can not respons. Examples include only Swedish people or those in possession of a vaccination certificate or maybe an employee pass.
+
 ## Singature Requests
 
 At the moment we support signing of PDFs or statements expressed as a plain string.
@@ -83,4 +87,6 @@ Each certificate will be according to some schema such as FHIR, EU Vaccination c
 "bytes": string, // A base64 encoded X509 certificate
 }
 ```
+
+
 
