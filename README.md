@@ -5,7 +5,7 @@ Essentially we support standard OIDC claims, add some from mDL and have custom c
 Just like in OIDC we are using this syntax to mark claim requests as mandatory or optional:
 
 ```
-  {
+{
   ..
   "claims": {
     ..
