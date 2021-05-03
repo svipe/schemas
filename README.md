@@ -75,22 +75,79 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | age_in_years| number | |
 | age_over_18| boolean | |
 | age_over_21| boolean | |
+| twitter|string | the Twitter handle i.e @johansellstrom|
+| facebook| string | the Facebook handle i.e @johansellstrom|
+| google| string | the Google handle i.e johan.sellstrom@gmail.com or some other email|
 
 ### Value Requests
 
-Sometimes you want to request only claims with specific values. If the End User is not in possession of such claims they can not respons. Examples include only Swedish people or those in possession of a vaccination certificate or maybe an employee pass.
+Sometimes you want to request only claims with specific values. If the End User is not in possession of such claims they can not respons. Examples include only Swedish people or those in possession of a vaccination certificate or maybe an employee pass or only a certain subject.
+
+Vaccination:
+
+```
+{
+  "claims": {
+    ..
+    "certificate": {
+      "value": {
+        "schema": "some schema URL",
+        "type": "some schema type definition"
+      }
+    }
+    ..
+  }
+}
+```
+
+Employee:
+
+```
+{
+  "claims": {
+    ..
+    "certificate": {
+      "value": {
+        "type": "ericsson_employee_number"
+      }
+    }
+    ..
+  }
+}
+```
+
+A certain subject:
+
+```
+{
+  "claims": {
+    ..
+    "sub": {"value": "248289761001"}
+    ..
+  }
+}
+```
+
 
 
 ### Authentication Method
 
+note:
+
+acr
+OPTIONAL. Authentication Context Class Reference. String specifying an Authentication Context Class Reference value that identifies the Authentication Context Class that the authentication performed satisfied. The value "0" indicates the End-User authentication did not meet the requirements of ISO/IEC 29115 [ISO29115] level 1. Authentication using a long-lived browser cookie, for instance, is one example where the use of "level 0" is appropriate. Authentications with level 0 SHOULD NOT be used to authorize access to any resource of any monetary value. (This corresponds to the OpenID 2.0 PAPE [OpenID.PAPE] nist_auth_level 0.) An absolute URI or an RFC 6711 [RFC6711] registered name SHOULD be used as the acr value; registered names MUST NOT be used with a different meaning than that which is registered. Parties using this claim will need to agree upon the meanings of the values used, which may be context-specific. The acr value is a case sensitive string.
+amr
+OPTIONAL. Authentication Methods References. JSON array of strings that are identifiers for authentication methods used in the authentication. For instance, values might indicate that both password and OTP authentication methods were used. The definition of particular values to be used in the amr Claim is beyond the scope of this specification. Parties using this claim will need to agree upon the meanings of the values used, which may be context-specific. The amr value is an array of case sensitive strings.
+
+
 In addition to disclosure requests you can also demand that the user and/or the underlying document is present or that a platform biometric or app pin was used prove presence.
 
-If acr is present we always tret it as essential/mandatory. The request is 
+If acm is present we always tret it as essential/mandatory. The request is 
 
 ```
 {
   ..
-  "acr": { 
+  "acm": { 
     "values": 
       ["face_present", "document_present", "face_and_document_present", "biometric_present", "face_and_document_and_biometric_present",
       "face_and_biometric_present", "document_and_biometric_present"] 
@@ -105,7 +162,7 @@ and the response is
 "claims": 
   {
     ..
-    "acr": "face_present" // a scalar
+    "acm": "face_present" // a scalar
    ..
   }
 ```
