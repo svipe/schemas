@@ -30,8 +30,31 @@ These are according to the standard as documented here https://openid.net/specs/
 | address| JSON| End-User's preferred postal address. The value of the address member is a JSON [RFC4627] structure containing some or all of the members defined in Section 5.1.1.|
 | updated_at| number| Time the End-User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time.|
 
-From the standard for Mobile Drivers License https://www.iso.org/standard/69084.html we add these:
+From the standard for Mobile Drivers License https://www.iso.org/standard/69084.html and ICAO xx we add these:
 
 | Claim | Type | Description
 | --- | --- | --- |
-| x | string| y |
+| portrait | string| same as picture above |
+| portrait_capture_date | string| same as picture above |
+| portrait_hash | string| OBSOLETE a hash of the portrait |
+| signature | string| End users signature using the same representation as picture |
+| resident_address | string| |
+| resident_city | string| Currently ABSENT|
+| resident_state | string| Currently ABSENT|
+| resident_postal_code | string|Currently ABSENT|
+| nationality | string|End-User's nationality, represented as a BCP47 [RFC5646] language tag. This is typically an ISO 639-1 Alpha-2 [ISO639‑1] language code in lowercase and an ISO 3166-1 Alpha-2 [ISO3166‑1] country code in uppercase, separated by a dash. For example, en-US or fr-CA. As a compatibility note, some implementations have used an underscore as the separator rather than a dash, for example, en_US; Relying Parties MAY choose to accept this locale syntax as well.|
+| administrative_number | string| This could be Social Security Number or any other national identifier such as Swedish personal number|
+| person_number | string| Specifically a Swedish personal number|
+| svipeid | string| A globally unique identifier issued by Svipe. It is the same as sub above|
+| peerid | string| A unique identifier issued by Svipe to a particular Relying Party.|
+| document_type | string| P for Passport and I for Identity Card|
+| document_number | string| A unique number in the underlying document|
+| issuing_authority | string| Document issuing authority|
+| issuing_country| string| Country that issued the document |
+| expiry_date| string| When the document expires.Format like birthday.|
+| issue_date| string| When the document was issued. Format like birthday.|
+| driving_privileges| string| Currently ABSENT.|
+| birth_date| string| Same as birthday.|
+| age_in_years| number| |
+| age_over_18| boolean| |
+| age_over_21| boolean| |
