@@ -115,7 +115,7 @@ Putting the schema in the envelope enables us to use that as an identifier in va
 ```
 {
   ..
-"claims": {
+  "claims": {
   ..
   "certificate": { "schema": "Schema-URL"},
   ..
