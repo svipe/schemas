@@ -54,7 +54,7 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | expiry_date| string | When the document expires. Format like birthday.|
 | issue_date| string | When the document was issued. Format like birthday.|
 | driving_privileges | string| Currently ABSENT.|
-| birth_date| string | Same as birthday.|
+| birth_date| string | Same as birthdate.|
 | age_in_years| number | |
 | age_over_18| boolean | |
 | age_over_21| boolean | |
