@@ -61,7 +61,7 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | resident_city | string| Currently ABSENT.|
 | resident_state | string| Currently ABSENT.|
 | resident_postal_code | string | Currently ABSENT.|
-| document_nationality | string | End-User's nationality, represented as a BCP47 [RFC5646] language tag. This is typically an ISO 639-1 Alpha-2 [ISO639‑1] language code in lowercase and an ISO 3166-1 Alpha-2 [ISO3166‑1] country code in uppercase, separated by a dash. For example, en-US or fr-CA. As a compatibility note, some implementations have used an underscore as the separator rather than a dash, for example, en_US; Relying Parties MAY choose to accept this locale syntax as well.|
+| document_nationality | string | End-User's nationality. Alpha-3.|
 | document_administrative_number | string| This could be a SSN (Social Security Number) or any other national identifier such as Swedish personal number|
 | document_personal_number | string| Specifically a Swedish personal number|
 | document_type | string| P for Passport and I for Identity Card and X for Residence Card (link to spec).|
