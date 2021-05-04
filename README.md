@@ -213,6 +213,11 @@ At the moment we only support signing of PDFs or statements expressed as a plain
 
 The response has the same JSON format but signed by the peer, so signature is different.
 
+### Outstanding issue
+
+It might be better to skip signature and let the envelope JWS provide the signature?
+
+
 ### Obsolete implementation
 
 The current implementation at acme.svipe.io is using:
