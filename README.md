@@ -249,18 +249,22 @@ When picking up a certificate a response is not really needed but maybe we want 
 We could add:
 
 ```
-"receipt": null/{"essential":true}
+{
+"certificate": {
+  "receipt": null/{"essential":true},
+  "schema": URL",
+  "payload": "the actual bytes of X509 or a JWS"
+}
 ```
 
-
-Also, should we call this something other than Claim? How about Certificate? Or should it be a claim?
+Also, should we call this something other than Claim? How about Certificate? Or should it be a claim? Putting it under claims would mean it is sent by a standard.
 
 Each certificate will be according to some schema such as FHIR, EU Vaccination certificate etc. Do we need an envelope with some meta data? Should it be X509 or JWS or either?
 
 ```
 {
 "schema": URL,
-"bytes": string, // A base64 encoded X509 certificate
+"payload": string, // A base64 encoded X509 certificate
 }
 ```
 
@@ -277,6 +281,9 @@ Putting the schema in the envelope enables us to use that as an identifier in va
   ..
 }
 ```
+
+The other use case is a Certificate Signing Request?
+
 
 ### Obsolete implementation
 
