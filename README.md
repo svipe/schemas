@@ -193,7 +193,7 @@ At the moment we only support signing of PDFs or statements expressed as a plain
 
 | Claim | Type | Description |
 |---|---|---|
-| sign|JSON| Either a statement or URL to PDF. |
+| sign|JSON| Either a statement or URI to PDF. |
 
 
 ```
@@ -202,8 +202,8 @@ At the moment we only support signing of PDFs or statements expressed as a plain
   "claims": {
   ..
   "sign": { 
-    "payload": "statement or URL to PDF",
-    "signature": "Base64 encoded signature of hash(payload)"
+    "payload": "statement or URI to PDF",
+    "signature": "JWS style Base64 encoded signature of hash(payload) or hash(URI.data) using the same key as when signing the envelope JWS."
     },
   ..
   }
