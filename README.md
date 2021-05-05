@@ -53,14 +53,13 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | --- | --- | --- |
 | svipeid | string | A globally unique identifier issued by Svipe. It is the same as sub above.|
 | peerid | string | A unique identifier issued by Svipe to a particular Relying Party.|
-| portrait | string| same as picture above |
-| portrait_capture_date | string| same as picture above |
-| portrait_hash | string| OBSOLETE a hash of the portrait |
-| signature | string| End users signature using the same representation as picture |
 | resident_address | string| Currently ABSENT.|
 | resident_city | string| Currently ABSENT.|
 | resident_state | string| Currently ABSENT.|
 | resident_postal_code | string | Currently ABSENT.|
+| document_portrait | string| same as picture above |
+| document_portrait_capture_date | string| same as picture above |
+| document_signature | string| End users signature using the same representation as picture |
 | document_nationality | string | End-User's nationality. Alpha-3.|
 | document_administrative_number | string| This could be a SSN (Social Security Number) or any other national identifier such as Swedish personal number|
 | document_personal_number | string| Specifically a Swedish personal number|
@@ -71,7 +70,7 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | document_expiry_date| string | When the document expires. Format like birthday.|
 | document_issue_date| string | Currently ABSENT. When the document was issued. Format like birthday.|
 | document_all| string | All of the document_ attributes|
-| driving_privileges | string| Currently ABSENT.|
+| document_driving_privileges | string| Currently ABSENT.|
 | birth_date| string | Same as birthdate.|
 | age_in_years| number | |
 | age_over_18| boolean | |
@@ -82,7 +81,7 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 
 ### Value Requests
 
-Sometimes you want to request only claims with specific values. If the End User is not in possession of such claims they can not respons. Examples include only Swedish people or those in possession of a vaccination certificate or maybe an employee pass or only a certain subject.
+Sometimes you want to request only claims with specific values. If the End User is not in possession of such claims they can not respond. Examples include only Swedish people or those in possession of a vaccination certificate or maybe an employee pass or only a certain subject.
 
 Vaccination:
 
@@ -108,6 +107,7 @@ Employee:
   "claims": {
     ..
     "certificate": {
+      {"essential":true}, 
       "value": {
         "type": "ericsson_employee_number"
       }
@@ -129,8 +129,6 @@ A certain subject:
 }
 ```
 
-
-
 ### Authentication Method
 
 
@@ -147,11 +145,21 @@ A certain subject:
 
 String specifying an Authentication Context Class Reference value that identifies the Authentication Context Class that the authentication performed satisfied. The value "0" indicates the End-User authentication did not meet the requirements of ISO/IEC 29115 [ISO29115] level 1. Authentication using a long-lived browser cookie, for instance, is one example where the use of "level 0" is appropriate. Authentications with level 0 SHOULD NOT be used to authorize access to any resource of any monetary value. (This corresponds to the OpenID 2.0 PAPE [OpenID.PAPE] nist_auth_level 0.) An absolute URI or an RFC 6711 [RFC6711] registered name SHOULD be used as the acr value; registered names MUST NOT be used with a different meaning than that which is registered. Parties using this claim will need to agree upon the meanings of the values used, which may be context-specific. The acr value is a case sensitive string.
 
+A response could be f.i
+
+```
+"claims": 
+  {
+    ..
+    "acr": 1 
+   ..
+  }
+```
 #### Authentication Methods References
 
 In addition to disclosure requests you can also demand that the user and/or the underlying document is present or that a platform biometric or app pin was used prove presence.
 
-If acm is present we always tret it as essential/mandatory. The request is 
+If acm is present we always treat it as essential/mandatory. The request is 
 
 ```
 {
@@ -168,7 +176,7 @@ If acm is present we always tret it as essential/mandatory. The request is
 
 JSON array of strings that are identifiers for authentication methods used in the authentication. For instance, values might indicate that both password and OTP authentication methods were used. The definition of particular values to be used in the amr Claim is beyond the scope of this specification. Parties using this claim will need to agree upon the meanings of the values used, which may be context-specific. The amr value is an array of case sensitive strings.
 
-and the response is
+A response could be f.i
 
 ```
 "claims": 
@@ -180,7 +188,6 @@ and the response is
 ```
 
 If one of the factors was not present the request fails and we provide no response.
-
 
 reference: https://openid.net/specs/openid-connect-core-1_0.html#acrSemantics
 
@@ -252,37 +259,10 @@ We could add:
 {
 "certificate": {
   "receipt": null/{"essential":true},
-  "schema": URL",
+  "schema": URL", // The schema tells you if it is X509 or JWS
   "payload": "the actual bytes of X509 or a JWS"
 }
 ```
-
-Also, should we call this something other than Claim? How about Certificate? Or should it be a claim? Putting it under claims would mean it is sent by a standard.
-
-Each certificate will be according to some schema such as FHIR, EU Vaccination certificate etc. Do we need an envelope with some meta data? Should it be X509 or JWS or either?
-
-```
-{
-"schema": URL,
-"payload": string, // A base64 encoded X509 certificate
-}
-```
-
-Putting the schema in the envelope enables us to use that as an identifier in value based requests. 
-
-```
-{
-  ..
-  "claims": {
-  ..
-  "certificate": { "schema": "Schema-URL"},
-  ..
-  }
-  ..
-}
-```
-
-The other use case is a Certificate Signing Request?
 
 
 ### Obsolete implementation
