@@ -31,7 +31,7 @@ Currently not vailable claims are ~~marked~~.
 |family_name | string| Surname(s) or last name(s) of the End-User. Note that in some cultures, people can have multiple family names or no family name; all can be present, with the names being separated by space characters.|
 | ~~middle_name~~| string| Middle name(s) of the End-User. Note that in some cultures, people can have multiple middle names; all can be present, with the names being separated by space characters. Also note that in some cultures, middle names are not used.|
 | ~~nickname~~| string|Casual name of the End-User that may or may not be the same as the given_name. For instance, a nickname value of Mike might be returned alongside a given_name value of Michael. |
-| preferred_username| string| Shorthand name by which the End-User wishes to be referred to at the RP, such as janedoe or j.doe. This value MAY be any valid JSON string including special characters such as @, /, or whitespace. The RP MUST NOT rely upon this value being unique, as discussed in Section 5.7.|
+| ~~preferred_username~~| string| Shorthand name by which the End-User wishes to be referred to at the RP, such as janedoe or j.doe. This value MAY be any valid JSON string including special characters such as @, /, or whitespace. The RP MUST NOT rely upon this value being unique, as discussed in Section 5.7.|
 | ~~profile~~ | string| URL of the End-User's profile page. The contents of this Web page SHOULD be about the End-User.|
 | picture| string|URL of the End-User's profile picture. This URL MUST refer to an image file (for example, a PNG, JPEG, or GIF image file), rather than to a Web page containing an image. Note that this URL SHOULD specifically reference a profile photo of the End-User suitable for displaying when describing the End-User, rather than an arbitrary photo taken by the End-User. |
 | ~~website~~ | string|URL of the End-User's Web page or blog. This Web page SHOULD contain information published by the End-User or an organization that the End-User is affiliated with. |
@@ -54,10 +54,10 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | --- | --- | --- |
 | svipeid | string | A globally unique identifier issued by Svipe. It is the same as sub above.|
 | peerid | string | A unique identifier issued by Svipe to a particular Relying Party.|
-| ~resident_address~  | string| Currently ABSENT.|
-| ~~resident_city~~  | string| Currently ABSENT.|
-| ~~~~resident_state~~ ~~  | string| Currently ABSENT.|
-| ~~~~resident_postal_code~~~~  | string | Currently ABSENT.|
+|  ~~resident_address~~ | string| Currently ABSENT.|
+|  ~~resident_city~~ | string| Currently ABSENT.|
+|  ~~resident_state~~ | string| Currently ABSENT.|
+|  ~~resident_postal_code~~ | string | Currently ABSENT.|
 | document_portrait | string| same as picture above |
 | document_portrait_capture_date | string| same as picture above |
 | document_signature | string| End users signature using the same representation as picture |
@@ -69,13 +69,13 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | document_issuing_authority | string| Document issuing authority.|
 | document_issuing_country| string| Country that issued the document. |
 | document_expiry_date| string | When the document expires. Format like birthday.|
-| ~~~~document_issue_date~~~~ | string | Currently ABSENT. When the document was issued. Format like birthday.|
+| ~~document_issue_date~~ | string | Currently ABSENT. When the document was issued. Format like birthday.|
 | document_all| string | All of the document_ attributes|
-| ~~~~document_driving_privileges~~~~  | string| Currently ABSENT.|
+| ~~document_driving_privileges~~  | string| Currently ABSENT.|
 | birth_date| string | Same as birthdate.|
-| ~~~~age_in_years~~~~ | number | |
-| ~~~~age_over_18~~~~ | boolean | |
-| ~~~~age_over_21~~~~ | boolean | |
+| ~~age_in_years~~ | number | |
+| ~~age_over_18~~ | boolean | |
+| ~~age_over_21~~ | boolean | |
 | twitter|string | the Twitter handle i.e @johansellstrom|
 | facebook| string | the Facebook handle i.e @johansellstrom|
 | google| string | the Google handle i.e johan.sellstrom@gmail.com or some other email|
