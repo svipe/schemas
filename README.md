@@ -44,7 +44,7 @@ Currently not vailable claims are ~~marked~~.
 |phone_number | string|End-User's preferred telephone number. E.164 [E.164] is RECOMMENDED as the format of this Claim, for example, +1 (425) 555-1212 or +56 (2) 687 2400. If the phone number contains an extension, it is RECOMMENDED that the extension be represented using the RFC 3966 [RFC3966] extension syntax, for example, +1 (604) 555-1234;ext=5678. |
 | phone_number_verified| boolean|True if the End-User's phone number has been verified; otherwise false. When this Claim Value is true, this means that the OP took affirmative steps to ensure that this phone number was controlled by the End-User at the time the verification was performed. The means by which a phone number is verified is context-specific, and dependent upon the trust framework or contractual agreements within which the parties are operating. When true, the phone_number Claim MUST be in E.164 format and any extensions MUST be represented in RFC 3966 format. |
 | ~~address~~ | JSON| End-User's preferred postal address. The value of the address member is a JSON [RFC4627] structure containing some or all of the members defined in Section 5.1.1.|
-|  ~~updated_at ~~| number| Time the End-User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time.|
+|  ~~updated_at~~| number| Time the End-User's information was last updated. Its value is a JSON number representing the number of seconds from 1970-01-01T0:0:0Z as measured in UTC until the date/time.|
 
 ## Custom Claims
 
@@ -63,7 +63,7 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | document_signature | string| End users signature using the same representation as picture |
 | document_nationality | string | End-User's nationality. Alpha-3.|
 | document_administrative_number | string| This could be a SSN (Social Security Number) or any other national identifier such as Swedish personal number|
-| document_personal_number | string| Specifically a Swedish personal number|
+| document_person_number | string| Specifically a Swedish person number|
 | document_type | string| P for Passport and I for Identity Card and X for Residence Card (link to spec).|
 | document_number | string| A unique number in the underlying document|
 | document_issuing_authority | string| Document issuing authority.|
