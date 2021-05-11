@@ -175,6 +175,19 @@ If acm is present we always treat it as essential/mandatory. The request is
 }
 ```
 
+Alternatively the values in the array are AND
+
+```
+{
+  ..
+  "acm": { 
+    "values": 
+      ["face_present","document_present", "pin_present",  "biometric_present"] 
+  }
+  ..
+}
+```
+
 JSON array of strings that are identifiers for authentication methods used in the authentication. For instance, values might indicate that both password and OTP authentication methods were used. The definition of particular values to be used in the amr Claim is beyond the scope of this specification. Parties using this claim will need to agree upon the meanings of the values used, which may be context-specific. The amr value is an array of case sensitive strings.
 
 A response could be f.i
