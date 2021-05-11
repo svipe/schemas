@@ -167,9 +167,9 @@ If acm is present we always treat it as essential/mandatory. The request is
   ..
   "acm": { 
     "values": 
-      ["face_present", "document_present", "face_and_document_present", 
-      "biometric_present", "face_and_document_and_biometric_present",
-      "face_and_biometric_present", "document_and_biometric_present"] 
+      ["face_present", "document_present", "pin_present", "face_and_document_present", "face_and_document_and_pin_present", 
+      "biometric_present", "face_and_document_and_biometric_pin_present", "face_and_document_and_biometric_present",
+      "face_and_biometric_present","face_and_pin_present", "document_and_biometric_present", "pin_and_biometric_present"] 
   }
   ..
 }
