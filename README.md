@@ -101,6 +101,24 @@ Vaccination:
 }
 ```
 
+To request a EU Green Card certificate the schema is https://id.uvci.eu/DGC.combined-schema.json and the valid types are vaccination|test|recovery.
+
+
+```
+{
+  "claims": {
+    ..
+    "certificate": {
+      "value": {
+        "schema": "https://id.uvci.eu/DGC.combined-schema.json",
+        "type": "vaccination"
+      }
+    }
+    ..
+  }
+}
+```
+
 Employee:
 
 ```
@@ -117,6 +135,7 @@ Employee:
   }
 }
 ```
+
 
 A certain subject:
 
