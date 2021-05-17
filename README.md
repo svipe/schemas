@@ -101,10 +101,31 @@ Vaccination:
 }
 ```
 
+
+
+#### Example: Request Corona Vaccination Certificate
+
+To request a EU Green Card certificate the schema is https://id.uvci.eu/DGC.combined-schema.json and the valid types are vaccination|test|recovery.
+
+
+```
+{
+  "claims": {
+    ..
+    "certificate": {
+      "value": {
+        "schema": "https://id.uvci.eu/DGC.combined-schema.json",
+        "type": "vaccination"
+      }
+    }
+    ..
+  }
+}
+```
+
 And the response will be:
 
 ```
-
 {
   "claims": {
     ..
@@ -124,26 +145,6 @@ And the response will be:
           "is": string, // "Certificate Issuer"
           "ci": string, // "Unique Certificate Identifier: UVCI"
        } 
-      }
-    }
-    ..
-  }
-}
-```
-
-#### Example: Request Corona Vaccination Certificate
-
-To request a EU Green Card certificate the schema is https://id.uvci.eu/DGC.combined-schema.json and the valid types are vaccination|test|recovery.
-
-
-```
-{
-  "claims": {
-    ..
-    "certificate": {
-      "value": {
-        "schema": "https://id.uvci.eu/DGC.combined-schema.json",
-        "type": "vaccination"
       }
     }
     ..
