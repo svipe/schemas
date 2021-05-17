@@ -101,6 +101,36 @@ Vaccination:
 }
 ```
 
+And the response will be:
+
+```
+
+{
+  "claims": {
+    ..
+    certificate": {
+      "value": {
+        "schema": "https://id.uvci.eu/DGC.combined-schema.json",
+        "type": "vaccination",
+        "vaccination_entry": {
+          "tg": string, // "Disease or agent targeted"
+          "vp": string, // "Vaccine or prophylaxis"
+          "mp": string, // "Vaccine medicinal product"
+          "ma": string, // "Marketing Authorization Holder - if no MAH present, then manufacturer"
+          "dn": string, // "Dose Number"
+          "sd": string, // "Total Series of Doses"
+          "dt": string, // "Date of Vaccination"
+          "co": string, // "Country of Vaccination"
+          "is": string, // "Certificate Issuer"
+          "ci": string, // "Unique Certificate Identifier: UVCI"
+       } 
+      }
+    }
+    ..
+  }
+}
+```
+
 #### Example: Request Corona Vaccination Certificate
 
 To request a EU Green Card certificate the schema is https://id.uvci.eu/DGC.combined-schema.json and the valid types are vaccination|test|recovery.
