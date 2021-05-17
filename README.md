@@ -145,6 +145,7 @@ And the response will be:
           "is": string, // "Certificate Issuer"
           "ci": string, // "Unique Certificate Identifier: UVCI"
        } 
+       "payload_string": string // the full original contents of the QR code
       }
     }
     ..
