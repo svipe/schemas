@@ -79,6 +79,8 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | twitter|string | the Twitter handle i.e @johansellstrom|
 | facebook| string | the Facebook handle i.e @johansellstrom|
 | google| string | the Google handle i.e johan.sellstrom@gmail.com or some other email|
+| covid19_vaccinated| boolean | if the subject had all the vaccinations for Covid19 more than 14 days ago |
+
 
 ### Value Requests
 
