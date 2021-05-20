@@ -131,7 +131,7 @@ And the response will be:
 {
   "claims": {
     ..
-    certificate": {
+    "green_certificate": {
       "value": {
         "schema": "https://id.uvci.eu/DGC.combined-schema.json",
         "type": "vaccination",
@@ -147,6 +147,24 @@ And the response will be:
           "is": string, // "Certificate Issuer"
           "ci": string, // "Unique Certificate Identifier: UVCI"
        } 
+       "payload_string": string // the full original contents of the QR code
+      }
+    }
+    ..
+  }
+}
+```
+
+in a general case:
+
+```
+{
+  "claims": {
+    ..
+    "certificate": {
+      "value": {
+        "schema": "some url",
+        "type": "some type",
        "payload_string": string // the full original contents of the QR code
       }
     }
