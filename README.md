@@ -80,6 +80,7 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 | facebook| string | the Facebook handle i.e @johansellstrom|
 | google| string | the Google handle i.e johan.sellstrom@gmail.com or some other email|
 | covid19_vaccinated| boolean | if the subject had all the vaccinations for Covid19 more than 14 days ago |
+| location| string | geographical coordinates <+59.48693000,+18.30116340> +/- 10408.74m (speed 0.00 mps / course 0.00) @ 2021-05-27, 18:07:41 Central European Summer Time |
 
 
 ### Value Requests
