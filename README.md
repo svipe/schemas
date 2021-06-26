@@ -58,17 +58,17 @@ From the standard for Mobile Drivers License https://www.iso.org/standard/69084.
 |  ~~resident_city~~ | string| Currently ABSENT.|
 |  ~~resident_state~~ | string| Currently ABSENT.|
 |  ~~resident_postal_code~~ | string | Currently ABSENT.|
-| document_portrait | string| same as picture above |
-| document_portrait_capture_date | string| same as picture above |
-| document_signature | string| End users signature using the same representation as picture |
-| document_nationality | string | End-User's nationality. Alpha-3.|
-| document_administrative_number | string| This could be a SSN (Social Security Number) or any other national identifier such as Swedish personal number|
-| document_person_number | string| Specifically a Swedish person number|
+| portrait | string| same as picture above |
+| portrait_capture_date | string| same as picture above |
+| signature | string| End users signature using the same representation as picture |
+| nationality | string | End-User's nationality. Alpha-3.|
+| administrative_number | string| This could be a SSN (Social Security Number) or any other national identifier such as Swedish personal number|
+| person_number | string| Specifically a Swedish person number|
 | document_type | string| P for Passport and I for Identity Card and X for Residence Card (link to spec).|
 | document_number | string| A unique number in the underlying document|
-| document_issuing_authority | string| Document issuing authority.|
-| document_issuing_country| string| Country that issued the document. |
-| document_expiry_date| string | When the document expires. Format like birthday.|
+| issuing_authority | string| Document issuing authority.|
+| issuing_country| string| Country that issued the document. |
+| expiry_date| string | When the document expires. Format like birthday.|
 | ~~document_issue_date~~ | string | Currently ABSENT. When the document was issued. Format like birthday.|
 | document_all| string | All of the document_ attributes|
 | ~~document_driving_privileges~~  | string| Currently ABSENT.|
